@@ -6,17 +6,19 @@ export interface BreadcrumbProps {
 
 const Breadcrumb = ({ href, title, current }: BreadcrumbProps) => {
   let className = 'gw-link-breadcrumb';
-  if (current === true) {
+  if (current) {
     className += ' gw-link-breadcrumb--current';
   }
   return (
-    <a
-      href={href}
-      aria-current={current ? 'page' : false}
-      className={className}
-    >
-      {title}
-    </a>
+    <>
+      {current ? (
+        <span className={className}>{title}</span>
+      ) : (
+        <a href={href} aria-current={false} className={className}>
+          {title}
+        </a>
+      )}
+    </>
   );
 };
 
