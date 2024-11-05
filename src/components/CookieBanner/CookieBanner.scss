@@ -9,7 +9,7 @@
 .gw-cookie-banner {
   padding-top: $gw-spacing-04;
   padding-bottom: $gw-spacing-04;
-  background-color: $gw-colour-grey-7;
+  background-color: $gw-colour-grey-7; // TODO: Align colours with Figma design when done.
   p,
   li {
     @include gw-mixin-font-size($gw-font-size-paragraph-small, $gw-line-height);

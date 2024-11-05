@@ -1,14 +1,9 @@
-// @use '../../helpers/mixins/typography';
-// @use '../../variables/spacing';
-// @use '../../variables/font';
-// @use '../../variables/font-sizes';
-
-@use '../../variables/variables' as *;
-@use '../../helpers/mixins' as *;
-
 // LLYW.CYMRU | GOV.WALES
 // Typography: Paragraph
 // ========================================
+
+@use '../../variables/variables' as *;
+@use '../../helpers/mixins' as *;
 
 p {
   @include gw-mixin-font-size($gw-font-size-paragraph, $gw-line-height);
