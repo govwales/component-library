@@ -5,10 +5,7 @@ export interface BreadcrumbProps {
 }
 
 const Breadcrumb = ({ href, title, current }: BreadcrumbProps) => {
-  let className = 'gw-link-breadcrumb';
-  if (current) {
-    className += ' gw-link-breadcrumb--current';
-  }
+  let className = `gw-link-breadcrumb${current ? ' gw-link-breadcrumb--current' : ''}`;
   return (
     <>
       {current ? (
