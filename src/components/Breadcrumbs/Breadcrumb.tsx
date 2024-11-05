@@ -14,7 +14,7 @@ const Breadcrumb = ({ href, title, current }: BreadcrumbProps) => {
       {current ? (
         <span className={className}>{title}</span>
       ) : (
-        <a href={href} aria-current={false} className={className}>
+        <a href={href} className={className}>
           {title}
         </a>
       )}
