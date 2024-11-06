@@ -1,0 +1,31 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Site branding
+// ========================================
+
+@use '../../variables/variables' as *;
+@use 'inline-svg' as *;
+
+@mixin gw-mixin-site-logo($logo-colour) {
+  width: $gw-logo-width;
+  height: $gw-logo-height;
+
+  a {
+    display: block;
+    width: $gw-logo-width;
+    height: $gw-logo-height;
+    @include gw-mixin-background-svg(
+      $gw-logo,
+      $logo-colour
+    ); // SVG image, SVG colour.
+    background-repeat: no-repeat;
+    background-size: $gw-logo-width $gw-logo-height;
+    background-position: top left;
+
+    &:focus {
+      @include gw-mixin-background-svg(
+        $gw-logo,
+        $gw-colour-focus-text
+      ); // SVG image, SVG colour.
+    }
+  }
+}

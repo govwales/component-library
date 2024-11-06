@@ -2,8 +2,8 @@
 // Components: ShareThisPage
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Specific variables.
 $gw-font-size-share-this-page: 16px;
@@ -53,7 +53,7 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
       $btn-background-colour-hover:
         $gw-colour-btn-share-this-page-background-hover,
       $btn-border: none,
-      $btn-padding-left: $gw-spacing-07,
+      $btn-padding-left: $gw-spacing-07
     );
 
     &:focus {

@@ -2,8 +2,8 @@
 // Components: Call Out
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Class: 'gw-callout'.
 .gw-callout {
@@ -34,7 +34,7 @@
     @include gw-mixin-background-svg(
       $gw-ui-callout-warning,
       $gw-colour-callout-warning-icon
-    ); //// SVG image, SVG colour.
+    ); // SVG image, SVG colour.
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: left 10px center;
@@ -46,7 +46,7 @@
     @include gw-mixin-background-svg(
       $gw-ui-callout-alert,
       $gw-colour-callout-alert-icon
-    ); //// SVG image, SVG colour.
+    ); // SVG image, SVG colour.
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: left 10px center;

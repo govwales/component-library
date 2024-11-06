@@ -2,8 +2,8 @@
 // Components: Link: Report this page
 // ========================================
 
-@import '../../../scss/global/settings/all';
-@import '../../../scss/global/helpers/all';
+@use '../../../scss/variables/variables' as *;
+@use '../../../scss/helpers/mixins' as *;
 
 // Specific variables.
 $gw-colour-link-default-report-this-page: $gw-colour-grey-1;

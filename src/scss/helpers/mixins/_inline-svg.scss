@@ -1,0 +1,9 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Inline SVG
+// ========================================
+
+@use '../functions/inline-svg' as *;
+
+@mixin gw-mixin-background-svg($svg, $colour) {
+  background-image: gw-function--svg-url($svg, $colour);
+}

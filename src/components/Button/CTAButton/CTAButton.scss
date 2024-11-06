@@ -2,8 +2,8 @@
 // Components: Button: Primary
 // ========================================
 
-@import '../../../scss/global/settings/all';
-@import '../../../scss/global/helpers/all';
+@use '../../../scss/variables/variables' as *;
+@use '../../../scss/helpers/mixins' as *;
 
 .gw-btn {
   // Class: 'gw-btn--cta'.
@@ -13,6 +13,10 @@
     border-radius: $gw-spacing-14;
     padding: $gw-spacing-03 $gw-spacing-05;
     @include gw-mixin-font-size($gw-font-size-button-cta, $gw-line-height);
+
+    &:visited {
+      color: $gw-colour-white;
+    }
 
     &.gw-btn--lg {
       padding: $gw-spacing-04 $gw-spacing-06;

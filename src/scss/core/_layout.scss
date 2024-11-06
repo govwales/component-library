@@ -1,0 +1,95 @@
+// LLYW.CYMRU | GOV.WALES
+// Layout
+// ========================================
+
+@use '../variables/variables' as *;
+@use '../helpers/mixins' as *;
+
+// Based on a 12 column grid system similar to bootstrap.
+
+// Grid demonstration display.
+// Not to be used in production.
+$gw-box-background-colour: $gw-colour-blue-5; // To be removed.
+$gw-box-border-colour: $gw-colour-blue; // To be removed.
+
+// Box can be used for wire framing prototypes.
+// Class: 'gw-box'.
+.box {
+  background-color: $gw-box-background-colour;
+  padding: $gw-spacing-02;
+  margin-bottom: $gw-spacing-04;
+  text-align: center;
+}
+
+// Fluid container.
+// Class: 'gw-container-fluid'.
+.gw-container-fluid {
+  padding-left: $gw-container-padding;
+  padding-right: $gw-container-padding;
+}
+
+// Fixed Container.
+// Class: 'gw-container'.
+.gw-container {
+  max-width: $gw-container-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $gw-container-padding;
+  padding-right: $gw-container-padding;
+
+  &--grey {
+    background-color: $gw-colour-background-grey;
+  }
+}
+
+// Row.
+// Class: 'gw-row'.
+.gw-row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: $gw-container-margin;
+  margin-right: $gw-container-margin;
+
+  // Class: 'gw-row--reversed'.
+  &--reversed {
+    flex-direction: row-reverse;
+  }
+
+  // Class: 'gw-row--center'.
+  &--center {
+    justify-content: center;
+  }
+
+  // Class: 'gw-row--end'.
+  &--end {
+    justify-content: flex-end;
+  }
+}
+
+// Column.
+// Class: 'gw-col'.
+.gw-col {
+  padding-left: $gw-container-padding;
+  padding-right: $gw-container-padding;
+  width: 100%;
+
+  // Class: 'gw-col--auto'.
+  &--auto {
+    flex: 1;
+  }
+}
+
+// Default xs column.
+// Class: 'gw-col-xs'.
+@include gw-mixin-grid('xs');
+
+// Viewports.
+// Class: 'gw-col-sm gw-col-md gw-col-lg'.
+@each $key, $val in $gw-column-breakpoints {
+  // Media queries.
+  @include gw-mixin-media-query($val) {
+    @include gw-mixin-grid($key);
+  }
+}

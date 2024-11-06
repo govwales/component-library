@@ -1,0 +1,15 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Transitions
+// ========================================
+
+@use 'sass:list';
+
+@mixin gw-mixin-transitions($time, $properties...) {
+  $transition: ();
+
+  @each $property in $properties {
+    $transition: list.append($transition, ($property $time), $separator: comma);
+  }
+
+  transition: $transition;
+}

@@ -1,0 +1,9 @@
+// LLYW.CYMRU | GOV.WALES
+// Utilities: Clearfix
+// ========================================
+
+@use '../helpers/mixins' as *;
+
+.gw-clearfix {
+  @include gw-mixin-clearfix;
+}

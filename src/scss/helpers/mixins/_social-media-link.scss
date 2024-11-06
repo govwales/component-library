@@ -1,0 +1,27 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Social media link
+// ========================================
+
+@use '../../variables/variables' as *;
+@use 'focus' as *;
+@use 'inline-svg' as *;
+@use 'transitions' as *;
+
+@mixin gw-mixin-social-media-svg($platform-ui-icon) {
+  @include gw-mixin-background-svg($platform-ui-icon, $gw-colour-link-default);
+
+  &:hover {
+    @include gw-mixin-transitions($gw-transition-in-time, color);
+    @include gw-mixin-background-svg($platform-ui-icon, $gw-colour-link-hover);
+  }
+
+  &:active,
+  &:visited {
+    @include gw-mixin-background-svg($platform-ui-icon, $gw-colour-link-hover);
+  }
+
+  &:focus {
+    @include gw-mixin-focused-btn;
+    @include gw-mixin-background-svg($platform-ui-icon, $gw-colour-focus-ui);
+  }
+}

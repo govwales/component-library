@@ -1,0 +1,37 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Links
+// ========================================
+
+@use '../../variables/variables' as *;
+@use 'focus' as *;
+@use 'transitions' as *;
+
+@mixin gw-mixin-link() {
+  color: $gw-colour-link-default;
+  font-weight: $gw-font-weight-bold;
+  text-decoration: none;
+  cursor: pointer;
+  @include gw-mixin-transitions(
+    $gw-transition-out-time,
+    color,
+    background-image
+  );
+
+  &:active,
+  &:visited {
+    color: $gw-colour-link-default;
+  }
+
+  &:hover {
+    color: $gw-colour-link-hover;
+    @include gw-mixin-transitions(
+      $gw-transition-in-time,
+      color,
+      background-image
+    );
+  }
+
+  &:focus {
+    @include gw-mixin-focused-text;
+  }
+}

@@ -3,48 +3,48 @@
 // ========================================
 
 // Breadcrumbs
-@import '../components/Breadcrumbs/Breadcrumbs';
+@use '../components/Breadcrumbs/Breadcrumbs';
 
 // Buttons
-@import '../components/Button/CTAButton/CTAButton';
+@use '../components/Button/CTAButton/CTAButton';
 
 // Callout
-@import '../components/CallOut/CallOut';
+@use '../components/CallOut/CallOut';
 
 // Card
-@import '../components/Card/Card';
+@use '../components/Card/Card';
 
 // CookieBanner
-@import '../components/CookieBanner/CookieBanner';
+@use '../components/CookieBanner/CookieBanner';
 
 // ErrorMessage
-@import '../components/ErrorMessage/ErrorMessage';
+@use '../components/ErrorMessage/ErrorMessage';
 
 // Link
-@import '../components/Link/ReportThisPageLink/ReportThisPageLink';
-@import '../components/Link/SkipLink/SkipLink';
-@import '../components/Link/SocialMediaLink/SocialMediaLink';
+@use '../components/Link/ReportThisPageLink/ReportThisPageLink';
+@use '../components/Link/SkipLink/SkipLink';
+@use '../components/Link/SocialMediaLink/SocialMediaLink';
 
 // Metadata
-@import '../components/Metadata/Metadata';
+@use '../components/Metadata/Metadata';
 
 // PageHeader
-@import '../components/PageHeader/PageHeader';
+@use '../components/PageHeader/PageHeader';
 
 // Pagination
-@import '../components/Pagination/MinimalPagination/MinimalPagination';
+@use '../components/Pagination/MinimalPagination/MinimalPagination';
 
 // ShareThisPage
-@import '../components/ShareThisPage/ShareThisPage';
+@use '../components/ShareThisPage/ShareThisPage';
 
 // SiteFooter
-@import '../components/SiteFooter/SiteFooter';
+@use '../components/SiteFooter/SiteFooter';
 
 // SiteHeader
-@import '../components/SiteHeader/SiteHeader';
+@use '../components/SiteHeader/SiteHeader';
 
 // SiteSearch
-@import '../components/SiteSearch/SiteSearch';
+@use '../components/SiteSearch/SiteSearch';
 
 // SiteUtilities
-@import '../components/SiteUtilities/SiteUtilities';
+@use '../components/SiteUtilities/SiteUtilities';

@@ -2,9 +2,9 @@
 // Components: Breadcrumbs
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
-@import './Breadcrumb.scss';
+@use 'Breadcrumb.scss';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Class 'gw-breadcrumbs'.
 .gw-breadcrumbs {

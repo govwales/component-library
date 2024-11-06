@@ -1,0 +1,66 @@
+// LLYW.CYMRU | GOV.WALES
+// Typography: Lists
+// ========================================
+
+@use '../../variables/variables' as *;
+@use '../../helpers/mixins' as *;
+
+dd,
+ul,
+ol {
+  @extend .gw-list;
+}
+
+.gw-list {
+  @include gw-mixin-font-size($gw-font-size-list, $gw-line-height);
+  margin-bottom: $gw-spacing-04;
+  padding-left: $gw-spacing-06;
+
+  li {
+    margin-bottom: $gw-spacing-01;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &--circle {
+    list-style-type: circle;
+  }
+
+  &--decimal {
+    list-style-type: decimal;
+  }
+
+  &--lower-alpha {
+    list-style-type: lower-alpha;
+  }
+
+  &--upper-alpha {
+    list-style-type: lower-alpha;
+  }
+
+  &--dash {
+    list-style-type: '-';
+    padding-left: $gw-spacing-05;
+
+    li {
+      padding-left: $gw-spacing-01;
+    }
+  }
+
+  &--revert {
+    list-style-type: revert;
+  }
+
+  &--no-bullet {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  &--index {
+    margin-bottom: $gw-spacing-04;
+    list-style-type: none;
+    padding-left: 0;
+  }
+}
