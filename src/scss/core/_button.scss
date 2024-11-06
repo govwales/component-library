@@ -58,6 +58,10 @@ $button-colours: (
     &:hover {
       background-color: $gw-colour-blue-2;
     }
+
+    &:visited {
+      color: $gw-colour-white;
+    }
   }
 
   // Class: 'gw-btn--secondary'.
@@ -169,6 +173,10 @@ $button-colours: (
 
       &:hover {
         background-color: map.get($button-colours, $button-colour, 'primary');
+      }
+
+      &:visited {
+        color: map.get($button-colours, $button-colour, 'primary');
       }
 
       @each $icon, $svg in $icons {

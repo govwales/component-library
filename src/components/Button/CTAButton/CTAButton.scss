@@ -14,6 +14,10 @@
     padding: $gw-spacing-03 $gw-spacing-05;
     @include gw-mixin-font-size($gw-font-size-button-cta, $gw-line-height);
 
+    &:visited {
+      color: $gw-colour-white;
+    }
+
     &.gw-btn--lg {
       padding: $gw-spacing-04 $gw-spacing-06;
       @include gw-mixin-font-size(
