@@ -1,21 +1,20 @@
-# GOV.WALES React Component Library
+# GOV.WALES Component Library
 
 &nbsp;
 
-> **WARNING:** This component library is in development and is subject to change.<br>
-> It is not intended for public usage at this time.
+**BETA** This library is in development and is subject to change.
 
 &nbsp;
 
 ## About
 
-GOV.WALES frontend contains the code you need to start building and integrating GOV.WALES user interface components for government platforms and services.
+This library contains GOV.WALES design system components built using Typescript React and SASS. Components and states are documented in Storybook.
 
 &nbsp;
 
 ## Contact the team
 
-GOV.WALES Frontend is maintained by a team at Welsh Government Corporate Digital Team. If you want to know more about GOV.WALES Frontend, please email the [Corporate Digital Team](mailto:digital@gov.wales).
+This repository is maintained by the Welsh Government Corporate Digital Team. If you want to know more about GOV.WALES Design System, please email the [Corporate Digital Team](mailto:digital@gov.wales).
 
 &nbsp;
 
