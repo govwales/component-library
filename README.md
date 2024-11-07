@@ -2,20 +2,19 @@
 
 &nbsp;
 
-**BETA:** This library is in development and is subject to change.
+**BETA** This library is in development and is subject to change.
 
 &nbsp;
 
 ## About
 
-This library contains GOV.WALES design system components built using Typescript React and SASS.
-All components and states are documented in Storybook.
+This library contains GOV.WALES design system components built using Typescript React and SASS. Components and states are documented in Storybook.
 
 &nbsp;
 
 ## Contact the team
 
-This repository is maintained by a team at Welsh Government Corporate Digital Team. If you want to know more about GOV.WALES Design System, please email the [Corporate Digital Team](mailto:digital@gov.wales).
+This repository is maintained by the Welsh Government Corporate Digital Team. If you want to know more about GOV.WALES Design System, please email the [Corporate Digital Team](mailto:digital@gov.wales).
 
 &nbsp;
 
