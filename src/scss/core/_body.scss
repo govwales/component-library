@@ -1,0 +1,20 @@
+// LLYW.CYMRU | GOV.WALES
+// Body
+// ========================================
+
+@use '../variables/variables' as *;
+@use '../helpers/functions/fonts' as *;
+
+body {
+  background: $gw-colour-layout-body-background;
+  color: $gw-colour-base-text;
+  font-family: $gw-font-family-primary;
+  font-size: gw-function--px-to-rem($gw-font-size);
+  font-style: $gw-font-style;
+  font-weight: $gw-font-weight-normal;
+  -webkit-font-smoothing: $gw-font-smoothing;
+  line-height: $gw-line-height;
+  margin: 0;
+  text-rendering: $gw-font-rendering;
+  letter-spacing: $gw-letter-spacing;
+}

@@ -3,7 +3,7 @@
  ======================================== */
 
 // Base CSS.
-@import 'govwales-global';
+@use 'govwales-global';
 
 // Component CSS: Required for full CSS release.
-@import 'govwales-components';
+@use 'govwales-components';

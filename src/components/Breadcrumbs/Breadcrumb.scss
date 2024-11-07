@@ -1,8 +1,9 @@
 // LLYW.CYMRU | GOV.WALES
 // Components: Link: Breadcrumb
 // ========================================
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Class 'gw-link-breadcrumb'.
 .gw-link-breadcrumb {

@@ -2,8 +2,8 @@
 // Components: Site header
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Specific variables.
 $gw-header-background: $gw-colour-layout-header-background;
@@ -44,7 +44,7 @@ $gw-header-site-search-border: $gw-colour-white;
       @include gw-mixin-background-svg(
         $gw-print-logo,
         null
-      ); //// SVG image, SVG colour.
+      ); // SVG image, SVG colour.
       background-repeat: no-repeat;
       background-size: $gw-print-logo-width $gw-print-logo-height;
       background-position: top left;

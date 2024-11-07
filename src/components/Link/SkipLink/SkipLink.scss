@@ -2,8 +2,7 @@
 // Components: Link: Skip
 // ========================================
 
-@import '../../../scss/global/settings/all';
-@import '../../../scss/global/helpers/all';
+@use '../../../scss/variables/variables' as *;
 
 // Class: 'gw-link--skip'.
 .gw-link--skip {

@@ -2,8 +2,8 @@
 // Components: Error Message
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Class: 'gw-error-message'.
 .gw-error-message {
@@ -20,7 +20,9 @@
   );
   @include gw-mixin-font-size($gw-font-size-error, null);
 
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     @include gw-mixin-font-size($gw-font-size-error, null);
 
     &:last-child {

@@ -1,0 +1,200 @@
+// LLYW.CYMRU | GOV.WALES
+// Button
+// ========================================
+
+@use 'sass:map';
+@use '../variables/variables' as *;
+@use '../helpers/mixins' as *;
+
+$icons: (
+  'close': $gw-ui-close,
+  'chevron-left': $gw-ui-chevron-left,
+  'chevron-right': $gw-ui-chevron-right,
+  'chevron-up': $gw-ui-chevron-up,
+  'chevron-down': $gw-ui-chevron-down,
+  'save': $gw-ui-save,
+  'search': $gw-ui-keyword-search,
+);
+
+// TODO: Align colours with Figma designs when done
+$button-colours: (
+  'red': (
+    'primary': $gw-colour-red,
+    'secondary': $gw-colour-red-2,
+  ),
+  'black': (
+    'primary': $gw-colour-black,
+    'secondary': $gw-colour-grey-1,
+  ),
+  'green': (
+    'primary': $gw-colour-green,
+    'secondary': $gw-colour-green-2,
+  ),
+  'grey': (
+    'primary': $gw-colour-grey-1,
+    'secondary': $gw-colour-grey-2,
+  ),
+);
+
+// Class: 'gw-btn'.
+.gw-btn {
+  // Common btn.
+  @include gw-mixin-btn;
+
+  &:focus {
+    @include gw-mixin-focused-btn;
+  }
+
+  &:hover:focus {
+    @include gw-mixin-focused-btn;
+  }
+
+  // Class: 'gw-btn--primary'.
+  &--primary {
+    border: none;
+    background-color: $gw-colour-blue;
+    color: $gw-colour-white;
+
+    &:hover {
+      background-color: $gw-colour-blue-2;
+    }
+
+    &:visited {
+      color: $gw-colour-white;
+    }
+  }
+
+  // Class: 'gw-btn--secondary'.
+  &--secondary {
+    border: 1px solid $gw-colour-blue;
+    color: $gw-colour-blue;
+    background-color: inherit;
+  }
+
+  // Class: 'gw-btn--cta'.
+  &--cta {
+    &:hover {
+      background-color: $gw-colour-blue-2;
+    }
+  }
+
+  // Sizes.
+  // Class: 'gw-btn--xs'.
+  &--xs {
+    @include gw-mixin-btn-xs();
+  }
+
+  // Class: 'gw-btn--sm'.
+  &--sm {
+    @include gw-mixin-btn-sm();
+  }
+
+  // Class: 'gw-btn--lg'.
+  &--lg {
+    @include gw-mixin-btn-lg();
+  }
+
+  // Class: 'gw-btn--icon'.
+  &--icon {
+    background-repeat: no-repeat;
+    position: relative;
+  }
+
+  // Class: 'gw-btn--icon-left'.
+  &--icon-left {
+    padding-left: $gw-spacing-09;
+    background-position: left 20px center;
+
+    &.gw-btn--sm {
+      background-position: left 15px center;
+      padding-left: $gw-spacing-08;
+    }
+  }
+
+  // Class: 'gw-btn--icon-right'.
+  &--icon-right {
+    padding-right: $gw-spacing-09;
+    background-position: right 20px center;
+
+    &.gw-btn--sm {
+      background-position: right 15px center;
+      padding-right: $gw-spacing-08;
+    }
+  }
+
+  // Class: 'gw-btn--icon-only'.
+  &--icon-only {
+    text-indent: -9999px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background-position: center;
+
+    &.gw-btn--lg {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  @each $icon, $svg in $icons {
+    &--icon-#{$icon} {
+      @include gw-mixin-background-svg($svg, $gw-colour-white);
+
+      &.gw-btn--secondary {
+        @include gw-mixin-background-svg($svg, $gw-colour-blue);
+      }
+
+      &:hover {
+        @include gw-mixin-background-svg($svg, $gw-colour-white);
+
+        &:focus {
+          @include gw-mixin-background-svg($svg, $gw-colour-black);
+        }
+      }
+
+      &:focus {
+        @include gw-mixin-background-svg($svg, $gw-colour-black);
+      }
+    }
+  }
+
+  @each $button-colour, $value in $button-colours {
+    &--primary-#{$button-colour} {
+      background-color: map.get($button-colours, $button-colour, 'primary');
+
+      &:hover {
+        background-color: map.get($button-colours, $button-colour, 'secondary');
+      }
+    }
+
+    &--secondary-#{$button-colour} {
+      border: 1px solid map.get($button-colours, $button-colour, 'primary');
+      color: map.get($button-colours, $button-colour, 'primary');
+
+      &:hover {
+        background-color: map.get($button-colours, $button-colour, 'primary');
+      }
+
+      &:visited {
+        color: map.get($button-colours, $button-colour, 'primary');
+      }
+
+      @each $icon, $svg in $icons {
+        &.gw-btn--icon-#{$icon} {
+          @include gw-mixin-background-svg(
+            $svg,
+            map.get($button-colours, $button-colour, 'primary')
+          );
+
+          &:hover {
+            @include gw-mixin-background-svg($svg, $gw-colour-white);
+          }
+
+          &:focus {
+            @include gw-mixin-background-svg($svg, $gw-colour-black);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Clearfix
+// ========================================
+
+@mixin gw-mixin-clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

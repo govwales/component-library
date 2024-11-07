@@ -1,0 +1,19 @@
+// LLYW.CYMRU | GOV.WALES
+// Utilities:
+// ========================================
+
+@use '../helpers/mixins' as *;
+
+.gw-visually-hidden {
+  @include gw-mixin-visually-hidden;
+
+  &--focusable {
+    &:focus {
+      @include gw-mixin-visually-hidden-focus;
+    }
+  }
+}
+
+.gw-fully-hidden {
+  display: none !important;
+}

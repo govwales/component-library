@@ -2,11 +2,11 @@
 // Components: Site utilities
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Specific variables.
-$gw-site-utilities-background: $gw-colour-grey-6;
+$gw-site-utilities-background: $gw-colour-grey-6; // TODO: Align colours with Figma design when done.
 
 // Class: 'gw-site-utilities'.
 .gw-site-utilities {

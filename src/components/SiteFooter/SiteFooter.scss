@@ -2,8 +2,8 @@
 // Components: Site footer
 // ========================================
 
-@import '../../scss/global/settings/all';
-@import '../../scss/global/helpers/all';
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins' as *;
 
 // Specific variables.
 $gw-footer-background: $gw-colour-layout-footer-background;

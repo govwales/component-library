@@ -1,0 +1,85 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Button
+// ========================================
+
+@use '../../variables/variables' as *;
+@use 'media-query' as *;
+@use 'typography' as *;
+
+@mixin gw-mixin-btn(
+  $btn-text-colour: $gw-colour-btn-text,
+  $btn-text-colour-hover: $gw-colour-btn-text-hover,
+  $btn-background-colour: $gw-colour-btn-background,
+  $btn-background-colour-hover: $gw-colour-btn-background-hover,
+  $btn-border: none,
+  $btn-line-height: $gw-line-height-buttons,
+  $btn-padding-top: $gw-spacing-02,
+  $btn-padding-right: $gw-spacing-04,
+  $btn-padding-bottom: $gw-spacing-02,
+  $btn-padding-left: $gw-spacing-04
+) {
+  border: $btn-border;
+  border-radius: 0;
+  display: inline-block;
+  appearance: button;
+  font-weight: $gw-font-weight-bold;
+  line-height: $btn-line-height;
+  cursor: pointer;
+  text-decoration: none;
+  color: $btn-text-colour;
+  background-color: $btn-background-colour;
+  padding-top: $btn-padding-top;
+  padding-right: $btn-padding-right;
+  padding-bottom: $btn-padding-bottom;
+  padding-left: $btn-padding-left;
+
+  &:active,
+  &:visited {
+    color: $btn-text-colour;
+  }
+
+  &:hover {
+    color: $btn-text-colour-hover;
+    background-color: $btn-background-colour-hover;
+  }
+
+  // Do not display print URL on buttons.
+  @include gw-mixin-media-query(print) {
+    &[href]:after {
+      content: '';
+    }
+  }
+}
+
+@mixin gw-mixin-btn-xs() {
+  @include gw-mixin-font-size(
+    $gw-font-size-button-small,
+    $gw-line-height-buttons
+  );
+  padding-top: $gw-spacing-01;
+  padding-right: $gw-spacing-02;
+  padding-bottom: $gw-spacing-01;
+  padding-left: $gw-spacing-02;
+}
+
+@mixin gw-mixin-btn-sm() {
+  @include gw-mixin-font-size(
+    $gw-font-size-button-small,
+    $gw-line-height-buttons
+  );
+  padding-top: $gw-spacing-01;
+  padding-right: $gw-spacing-03;
+  padding-bottom: $gw-spacing-01;
+  padding-left: $gw-spacing-03;
+}
+
+@mixin gw-mixin-btn-lg() {
+  @include gw-mixin-font-size(
+    $gw-font-size-button-large,
+    $gw-line-height-buttons
+  );
+  padding-top: $gw-spacing-03;
+  padding-right: $gw-spacing-04;
+  padding-bottom: $gw-spacing-03;
+  padding-left: $gw-spacing-04;
+}

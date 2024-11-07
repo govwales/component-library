@@ -2,8 +2,8 @@
 // Components: Minimal pagination
 // ========================================
 
-@import '../../../scss/global/settings/all';
-@import '../../../scss/global/helpers/all';
+@use '../../../scss/variables/variables' as *;
+@use '../../../scss/helpers/mixins' as *;
 
 // Class: 'gw-minimal-pagination-link'.
 .gw-minimal-pagination-link {
@@ -89,7 +89,7 @@
     @include gw-mixin-background-svg(
       $gw-ui-chevron-right,
       $gw-colour-link-default
-    ); //// SVG image, SVG colour.
+    ); // SVG image, SVG colour.
     background-repeat: no-repeat;
     background-size: 15px;
     background-position: right 2px;

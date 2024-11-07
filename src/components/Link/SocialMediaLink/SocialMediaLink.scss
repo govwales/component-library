@@ -2,8 +2,9 @@
 // Components: Link: Social media
 // ========================================
 
-@import '../../../scss/global/settings/all';
-@import '../../../scss/global/helpers/all';
+@use 'sass:map';
+@use '../../../scss/variables/variables' as *;
+@use '../../../scss/helpers/mixins' as *;
 
 // Specific variables.
 $social-media-list: 'facebook' 'instagram' 'x' 'linkedin' 'pinterest' 'youtube'
@@ -56,7 +57,7 @@ $social-media-list: 'facebook' 'instagram' 'x' 'linkedin' 'pinterest' 'youtube'
     // Class: 'gw-social-media-link--#{platform}'.
     &--#{$platform} {
       @include gw-mixin-social-media-svg(
-        $platform-ui-icon: map-get($gw-ui-social-media, $platform)
+        $platform-ui-icon: map.get($gw-ui-social-media, $platform)
       );
     }
   }

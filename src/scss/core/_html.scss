@@ -1,0 +1,12 @@
+// LLYW.CYMRU | GOV.WALES
+// HTML
+// ========================================
+
+@use '../variables/variables' as *;
+
+// This class should be added to your HTML markup.
+// <html class="gw-template" lang="en">
+.gw-template {
+  background: $gw-colour-layout-html-background;
+  text-size-adjust: 100%;
+}

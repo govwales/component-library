@@ -1,0 +1,18 @@
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Border
+// ========================================
+
+@use '../../variables/variables' as *;
+
+@mixin gw-mixin-border(
+  $border-position: null,
+  $border-style: $gw-border-style,
+  $border-color: $gw-colour-border-grey,
+  $border-width: $gw-border-height-small
+) {
+  @if ($border-position) {
+    border-#{$border-position}: $border-style $border-width $border-color;
+  } @else {
+    border: $border-style $border-width $border-color;
+  }
+}

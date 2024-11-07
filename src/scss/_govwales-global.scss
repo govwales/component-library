@@ -2,4 +2,18 @@
 // Frontend: Global styles
 // ========================================
 
-@import "global/all";
+// Variables
+@use './variables/variables';
+
+// Helpers (mixins)
+@use './helpers/functions';
+@use './helpers/mixins';
+
+// Initial
+@use './initial/initial';
+
+// Utilities
+@use './utilities/utilities';
+
+// Core
+@use './core/core';

@@ -1,0 +1,31 @@
+// LLYW.CYMRU | GOV.WALES
+// Settings: Typography: Base
+// ========================================
+
+// Font.
+$gw-font-family-primary: Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+$gw-font-family-secondary: 'Rockwell W01 Bold', Arial, Helvetica, sans-serif; // Identities,logos,branding.
+$gw-font-size: 16px;
+$gw-font-smoothing: auto;
+$gw-font-style: normal;
+
+// Line height.
+$gw-line-height: 1.3;
+$gw-line-height-headings: 1.2;
+$gw-line-height-buttons: 1.5rem; // rem is applied to keep button height consistent.
+
+// Text rendering for SVG.
+$gw-font-rendering: optimizeLegibility;
+
+// Weight.
+$gw-font-weight-light: 300; // Included but not used.
+$gw-font-weight-normal: 400;
+$gw-font-weight-medium: 500; // Included but not used.
+$gw-font-weight-semi-bold: 600; // Included but not used.
+$gw-font-weight-bold: 700;
+$gw-font-weight-extra-bold: 800; // Included but not used.
+
+// Letter spacing.
+$gw-letter-spacing: normal;
+$gw-letter-spacing-tight: -25; // -.025rem tighter kerning.
+$gw-letter-spacing-wide: 80; // 0.08rem wider kerning.

@@ -1,0 +1,43 @@
+@use '../functions/grid' as functions-grid;
+
+// LLYW.CYMRU | GOV.WALES
+// Mixins: Grid
+// ========================================
+
+@use '../../variables/variables' as *;
+@use '../functions/grid' as *;
+
+@mixin gw-mixin-grid($breakpoint) {
+  .gw-col#{gw-function--grid-class-generic($breakpoint)} {
+    flex: 1;
+  }
+
+  .gw-#{gw-function--grid-placement($breakpoint, 'first')} {
+    order: -1;
+  }
+
+  .gw-#{gw-function--grid-placement($breakpoint,'last')} {
+    order: 1;
+  }
+
+  .gw-#{gw-function--grid-placement($breakpoint,'display-none')} {
+    display: none;
+  }
+
+  @for $size from 1 through $gw-columns {
+    .gw-col#{gw-function--grid-class($breakpoint, $size)} {
+      width: calc($size / 12 * 100%);
+      padding-left: $gw-container-padding;
+      padding-right: $gw-container-padding;
+      display: block;
+    }
+
+    .gw-col#{gw-function--grid-push-pull($breakpoint, $size, 'push')} {
+      margin-left: calc($size / 12 * 100%);
+    }
+
+    .gw-col#{gw-function--grid-push-pull($breakpoint, $size, 'pull')} {
+      margin-right: calc($size / 12 * 100%);
+    }
+  }
+}
