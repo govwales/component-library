@@ -10,7 +10,6 @@ const PrimaryMenuData: LinkProps[] = [
     children: 'Primary Link 1',
     href: 'https://gov.wales',
     ['aria-label']: 'Test aria label',
-    target: '_blank',
   },
   {
     children: 'Primary Link 2',
@@ -26,6 +25,7 @@ const SecondaryMenuData: LinkProps[] = [
   {
     children: 'Secondary Link 1',
     href: 'https://gov.wales',
+    target: '_blank',
   },
   {
     children: 'Secondary Link 2',
