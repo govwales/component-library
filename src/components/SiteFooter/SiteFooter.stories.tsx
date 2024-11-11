@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { LinkProps } from '../Link/Link';
 
 // Import React component.
 import SiteFooter from './SiteFooter';
 
 // This data is used as an example.
-export const PrimaryMenuData = [
+export const PrimaryMenuData: LinkProps[] = [
   {
     children: 'Primary Link 1',
     href: 'https://gov.wales',
     ['aria-label']: 'Test aria label',
+    target: '_blank',
   },
   {
     children: 'Primary Link 2',
@@ -20,7 +22,7 @@ export const PrimaryMenuData = [
   },
 ];
 
-export const SecondaryMenuData = [
+export const SecondaryMenuData: LinkProps[] = [
   {
     children: 'Secondary Link 1',
     href: 'https://gov.wales',
