@@ -1,11 +1,39 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 // Import React component.
 import SiteFooter from './SiteFooter';
 
-// Menu Example Data.
-import { PrimaryMenuData, SecondaryMenuData } from './DataExample';
+// This data is used as an example.
+export const PrimaryMenuData = [
+  {
+    children: 'Primary Link 1',
+    href: 'https://gov.wales',
+    ['aria-label']: 'Test aria label',
+  },
+  {
+    children: 'Primary Link 2',
+    href: 'https://gov.wales',
+  },
+  {
+    children: 'Primary Link 3',
+    href: 'https://gov.wales',
+  },
+];
+
+export const SecondaryMenuData = [
+  {
+    children: 'Secondary Link 1',
+    href: 'https://gov.wales',
+  },
+  {
+    children: 'Secondary Link 2',
+    href: 'https://gov.wales',
+  },
+  {
+    children: 'Secondary Link 3',
+    href: 'https://gov.wales',
+  },
+];
 
 // Storybook Meta.
 const meta: Meta<typeof SiteFooter> = {
