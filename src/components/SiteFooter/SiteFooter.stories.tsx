@@ -5,7 +5,7 @@ import { LinkProps } from '../Link/Link';
 import SiteFooter from './SiteFooter';
 
 // This data is used as an example.
-export const PrimaryMenuData: LinkProps[] = [
+const PrimaryMenuData: LinkProps[] = [
   {
     children: 'Primary Link 1',
     href: 'https://gov.wales',
@@ -22,7 +22,7 @@ export const PrimaryMenuData: LinkProps[] = [
   },
 ];
 
-export const SecondaryMenuData: LinkProps[] = [
+const SecondaryMenuData: LinkProps[] = [
   {
     children: 'Secondary Link 1',
     href: 'https://gov.wales',
