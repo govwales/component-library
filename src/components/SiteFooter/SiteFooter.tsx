@@ -1,20 +1,15 @@
 import { Container, Row, Col } from '../Layout';
+import { LinkProps } from '../Link/Link';
 import SiteLogo from '../SiteLogo/SiteLogo';
 
 // Component SCSS.
 import './SiteFooter.scss';
 
-export interface MenuItem {
-  title: string;
-  url: string;
-  target: string;
-}
-
 // Component props.
 export interface SiteFooterProps {
   locale?: string;
-  primaryMenu?: MenuItem[];
-  secondaryMenu?: MenuItem[];
+  primaryMenu?: LinkProps[];
+  secondaryMenu?: LinkProps[];
   logoID?: string;
   logoHref?: string;
 }
@@ -47,8 +42,8 @@ const SiteFooter = ({
                     <ul className='gw-site-footer__nav--primary'>
                       {primaryMenu.map((item, index) => (
                         <li key={index}>
-                          <a href={item.url} target={item.target}>
-                            {item.title}
+                          <a {...item}>
+                            {item.children}
                           </a>
                         </li>
                       ))}
@@ -58,8 +53,8 @@ const SiteFooter = ({
                     <ul className='gw-site-footer__nav--secondary'>
                       {secondaryMenu.map((item, index) => (
                         <li key={index}>
-                          <a href={item.url} target={item.target}>
-                            {item.title}
+                          <a {...item}>
+                            {item.children}
                           </a>
                         </li>
                       ))}
