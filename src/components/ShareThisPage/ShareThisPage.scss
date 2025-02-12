@@ -29,6 +29,10 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
     width: auto;
   }
 
+  details {
+    display: flex;
+  }
+
   summary {
     background-repeat: no-repeat;
     background-position: left 10px center;
