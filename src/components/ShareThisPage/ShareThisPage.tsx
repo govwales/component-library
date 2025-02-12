@@ -37,10 +37,10 @@ const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
 
   return (
     <div id='gw-share-this-page' className='gw-share-this-page'>
-      <details id='gw-share-this-page-link'>
+      <details id='gw-share-this-page-links'>
         <summary
           onClick={handleToggle}
-          aria-controls='gw-share-this-page-link'
+          aria-controls='gw-share-this-page-links'
           aria-expanded={expanded ? true : false}
         >
           {headerLabel}
