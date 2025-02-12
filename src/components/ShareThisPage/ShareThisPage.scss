@@ -21,16 +21,9 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
   border: 1px solid $gw-colour-btn-share-this-page-border;
   background-color: $gw-colour-btn-share-this-page-background;
 
-  // Class: 'gw-share-this-page__container'.
-  &__container {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: auto;
-  }
-
   details {
-    display: flex;
+    display: block;
+    display: -webkit-box; // Fixes the position in webkit browsers
   }
 
   summary {
@@ -67,9 +60,13 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
         $gw-colour-btn-share-this-page-text
       );
     }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
   }
 
-  & ul {
+  ul {
     display: inline;
     list-style: none;
     margin: 0;

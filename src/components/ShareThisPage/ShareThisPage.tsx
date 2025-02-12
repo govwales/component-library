@@ -37,30 +37,28 @@ const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
 
   return (
     <div id='gw-share-this-page' className='gw-share-this-page'>
-      <div className='gw-share-this-page__container'>
-        <details id='gw-share-this-page-link'>
-          <summary
-            onClick={handleToggle}
-            aria-controls='gw-share-this-page-link'
-            aria-expanded={expanded ? true : false}
-          >
-            {headerLabel}
-          </summary>
-          <ul>
-            {shareLinks.map((link, index) => (
-              <li key={index}>
-                <SocialMediaLink
-                  locale={locale}
-                  href={link.href}
-                  title={link.title}
-                  platform={link.method}
-                  size='sm'
-                />
-              </li>
-            ))}
-          </ul>
-        </details>
-      </div>
+      <details id='gw-share-this-page-link'>
+        <summary
+          onClick={handleToggle}
+          aria-controls='gw-share-this-page-link'
+          aria-expanded={expanded ? true : false}
+        >
+          {headerLabel}
+        </summary>
+        <ul>
+          {shareLinks.map((link, index) => (
+            <li key={index}>
+              <SocialMediaLink
+                locale={locale}
+                href={link.href}
+                title={link.title}
+                platform={link.method}
+                size='sm'
+              />
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 };
