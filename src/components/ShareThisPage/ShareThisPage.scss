@@ -21,12 +21,7 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
   border: 1px solid $gw-colour-btn-share-this-page-border;
   background-color: $gw-colour-btn-share-this-page-background;
 
-  details {
-    display: block;
-    display: -webkit-box; // Fixes the position in webkit browsers
-  }
-
-  summary {
+  button {
     background-repeat: no-repeat;
     background-position: left 10px center;
     background-size: 15px;
