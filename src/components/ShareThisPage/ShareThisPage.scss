@@ -21,7 +21,17 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
   border: 1px solid $gw-colour-btn-share-this-page-border;
   background-color: $gw-colour-btn-share-this-page-background;
 
-  button {
+  h2 {
+    margin: 0;
+    display: inline-block;
+    @include gw-mixin-font-size(
+      $gw-font-size-share-this-page,
+      $gw-line-height-share-this-page
+    );
+  }
+
+  // Class: .gw-share-this-page__toggle
+  &__toggle {
     background-repeat: no-repeat;
     background-position: left 10px center;
     background-size: 15px;
@@ -55,14 +65,10 @@ $gw-colour-btn-share-this-page-border: $gw-colour-grey-2;
         $gw-colour-btn-share-this-page-text
       );
     }
-
-    &::-webkit-details-marker {
-      display: none;
-    }
   }
 
   ul {
-    display: inline;
+    display: inline-block;
     list-style: none;
     margin: 0;
     padding: 0;

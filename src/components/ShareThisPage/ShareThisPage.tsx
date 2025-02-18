@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SocialMediaLink } from '../Link';
 import './ShareThisPage.scss';
 
@@ -24,6 +24,7 @@ export interface ShareThisPageProps {
 
 const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
   const [expanded, setExpanded] = useState(false);
+  const [jsEnabled, setJsEnabled] = useState(false);
 
   const handleToggle = () => {
     setExpanded(current => !current);
@@ -35,24 +36,61 @@ const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
     headerLabel = "Rhannu'r dudalen hon";
   }
 
+  useEffect(() => {
+    setJsEnabled(true);
+  });
+
   return (
     <div id='gw-share-this-page' className='gw-share-this-page'>
-      <button aria-expanded={expanded} onClick={handleToggle}>
-        {headerLabel}
-      </button>
-      <ul className={expanded ? '' : 'gw-visually-hidden'}>
-        {shareLinks.map((link, index) => (
-          <li key={index}>
-            <SocialMediaLink
-              locale={locale}
-              href={link.href}
-              title={link.title}
-              platform={link.method}
-              size='sm'
-            />
-          </li>
-        ))}
-      </ul>
+      {jsEnabled ? (
+        <>
+          <h2>
+            <button
+              id='sharePage'
+              aria-controls='sharePageLinks'
+              aria-expanded={expanded}
+              className='gw-share-this-page__toggle'
+              onClick={handleToggle}
+            >
+              {headerLabel}
+            </button>
+          </h2>
+          <ul
+            id='sharePageLinks'
+            aria-labelledby='sharePage'
+            className={expanded ? '' : 'gw-visually-hidden'}
+          >
+            {shareLinks.map((link, index) => (
+              <li key={index}>
+                <SocialMediaLink
+                  locale={locale}
+                  href={link.href}
+                  title={link.title}
+                  platform={link.method}
+                  size='sm'
+                />
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <>
+          <h2 className='gw-share-this-page__toggle'>{headerLabel}</h2>
+          <ul>
+            {shareLinks.map((link, index) => (
+              <li key={index}>
+                <SocialMediaLink
+                  locale={locale}
+                  href={link.href}
+                  title={link.title}
+                  platform={link.method}
+                  size='sm'
+                />
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 };
