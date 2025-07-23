@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent } from '@storybook/test';
+import { userEvent } from 'storybook/test';
 import Cookies from 'js-cookie';
 
 // Import React component.
