@@ -1,9 +1,12 @@
 name: Publish Package
 
-on:
-  push:
-    tags:
-      - '*'
+# TODO: Enable on tag push when ready to publish
+on: push
+
+# on:
+#   push:
+#     tags:
+#       - '*'
 
 permissions:
   id-token: write  # Required for OIDC
