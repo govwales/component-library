@@ -1,12 +1,9 @@
 name: Publish Package
 
-# TODO: Enable on tag push when ready to publish
-on: push
-
-# on:
-#   push:
-#     tags:
-#       - '*'
+on:
+  push:
+    tags:
+      - '*'
 
 permissions:
   id-token: write  # Required for OIDC
@@ -36,4 +33,4 @@ jobs:
         run: npm run build --if-present
 
       - name: Publish to NPM
-        run: npm publish --provenance
+        run: npm publish
