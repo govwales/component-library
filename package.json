@@ -6,6 +6,10 @@
     "name": "Welsh Government Corporate Digital Team"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/govwales/component-library"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "storybook": "storybook dev -p 6006",
