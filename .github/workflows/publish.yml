@@ -1,7 +1,6 @@
 name: Publish Package
 
 # TODO: Enable on tag push when ready to publish
-# Updated config in npm - this comment is to kick off an action to test
 on: push
 
 # on:
