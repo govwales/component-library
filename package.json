@@ -1,11 +1,15 @@
 {
   "name": "@govwales/component-library",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "GOV.WALES Design System Component Library for government digital services and platforms",
   "author": {
     "name": "Welsh Government Corporate Digital Team"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/govwales/component-library"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "storybook": "storybook dev -p 6006",
@@ -15,6 +19,7 @@
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "eslintConfig": {
