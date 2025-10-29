@@ -11,6 +11,11 @@
   @if ($line-height) {
     line-height: gw-function--line-height($size, $line-height);
   }
+
+  @if $size < 16px {
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: auto;
+  }
 }
 
 @mixin gw-mixin-letter-spacing($font-size, $percentage) {
