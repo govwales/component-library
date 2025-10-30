@@ -12,7 +12,8 @@ body {
   font-size: gw-function--px-to-rem($gw-font-size);
   font-style: $gw-font-style;
   font-weight: $gw-font-weight-normal;
-  -webkit-font-smoothing: $gw-font-smoothing;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: $gw-line-height;
   margin: 0;
   text-rendering: $gw-font-rendering;
