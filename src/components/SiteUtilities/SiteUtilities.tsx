@@ -129,6 +129,8 @@ const SiteUtilities = ({
                     role='button'
                     id='gw-back-to-top'
                     colour='black'
+                    icon='chevron-up'
+                    iconPosition='left'
                     onClick={e => {
                       backToTopButtonOnClick(e);
                     }}
