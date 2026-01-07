@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, screen } from 'storybook/test';
+import { userEvent, within } from 'storybook/test';
 import Cookies from 'js-cookie';
 import CookieBanner from './CookieBanner';
 
@@ -126,14 +126,14 @@ export const CookiesAccepted: Story = {
   render: Default.render,
   parameters: {
     docs: {
-      story: {
-        autoplay: true,
-      },
+      autoplay: true,
     },
   },
-  play: async () => {
-    const acceptButton = await screen.findByRole('button', {
-      name: /accept all cookies/i,
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const acceptButton = await canvas.findByRole('button', {
+      name: /Accept all cookies/i,
     });
 
     await userEvent.click(acceptButton);
