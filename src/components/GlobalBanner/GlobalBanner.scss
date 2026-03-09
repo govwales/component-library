@@ -1,0 +1,26 @@
+.gw-global-banner {
+
+  &__content {
+
+  }
+
+  &__title {
+
+  }
+
+  &__description {
+
+  }
+
+  &--default {
+    background-color: #f0f0f0;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &--feedback {
+    background-color: #e7f3ff;
+    color: #0056b3;
+    border-bottom: 1px solid #b3d9ff;
+  }
+}
