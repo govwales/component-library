@@ -66,7 +66,7 @@ export const DismissFunctionality: Story = {
     await expect(banner).toBeInTheDocument();
 
     // Find and click the dismiss button
-    const dismissButton = canvas.getByRole('button', { name: /dismiss banner/i });
+    const dismissButton = canvas.getByRole('button', { name: /hide message/i });
     await userEvent.click(dismissButton);
 
     // Wait a moment for the component to update
