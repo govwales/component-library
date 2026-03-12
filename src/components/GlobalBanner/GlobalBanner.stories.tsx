@@ -34,37 +34,11 @@ export const Default: Story = {
         titleHref="#"
         description="This is an important announcement. Please read carefully."
         cookieConfig={{ name: 'globalBanner', expiryDays: 7 }}
-        type="default"
       />
     );
   },
   beforeEach: async () => {
     clearCookie('globalBanner');
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    // Check that the banner is initially visible
-    const banner = canvas.getByRole('banner');
-    await expect(banner).toBeInTheDocument();
-  },
-};
-
-export const Feedback: Story = {
-  render: (_args: any, { globals: { locale } }) => {
-    return (
-      <GlobalBanner
-        locale={locale}
-        title="Important Notice"
-        titleHref="#"
-        description="This is an important announcement. Please read carefully."
-        cookieConfig={{ name: 'globalBanner', expiryDays: 7 }}
-        type="feedback"
-      />
-    );
-  },
-  beforeEach: async () => {
-    clearCookie('globalBannerFeedback');
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
@@ -84,7 +58,6 @@ export const DismissFunctionality: Story = {
         titleHref="#"
         description="This is an important announcement. Click dismiss to test cookie functionality."
         cookieConfig={{ name: 'globalBannerDismiss', expiryDays: 7 }}
-        type="default"
       />
     );
   },
@@ -119,7 +92,6 @@ export const LongContent: Story = {
         titleHref="#"
         description="This is a very long description that should test how the banner handles extended text content. It includes multiple sentences and should demonstrate how the component behaves with lengthy announcements or important notices that users need to read. The description should wrap appropriately and maintain readability across different viewport sizes. This additional text ensures we can see how the banner scales with more content than typical use cases."
         cookieConfig={{ name: 'globalBannerLong', expiryDays: 7 }}
-        type="default"
       />
     );
   },

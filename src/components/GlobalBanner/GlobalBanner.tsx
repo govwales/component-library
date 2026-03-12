@@ -14,7 +14,6 @@ interface GlobalBannerProps {
   titleHref: string;
   description: string;
   cookieConfig: CookieConfig;
-  type: 'default' | 'feedback';
 }
 
 const getCookie = (name: string): string | null => {
@@ -38,7 +37,6 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
   titleHref,
   description,
   cookieConfig,
-  type,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -57,7 +55,7 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
   if (!isVisible) return null;
 
   return (
-    <div className={`gw-global-banner gw-global-banner--${type}`} role="banner">
+    <div className={`gw-global-banner`} role="banner">
       <div className='gw-container'>
         <div className="gw-global-banner__content">
           <a href={titleHref} className="gw-global-banner__title">

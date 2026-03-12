@@ -7,7 +7,7 @@
 
 .gw-global-banner {
   padding: 20px 0;
-  background-color: #f0f0f0;
+  background-color: $gw-colour-yellow-2;
 
   .gw-container {
     display: flex;
@@ -31,9 +31,6 @@
     margin-bottom: 0;
   }
 
-  &--feedback {
-    background-color: $gw-colour-yellow-2;
-  }
   .gw-btn {
     min-width: 34px;
   }
