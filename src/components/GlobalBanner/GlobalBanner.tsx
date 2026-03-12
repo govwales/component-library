@@ -9,6 +9,7 @@ interface CookieConfig {
 }
 
 interface GlobalBannerProps {
+  locale?: 'en' | 'cy';
   title: string;
   titleHref: string;
   description: string;
@@ -32,6 +33,7 @@ const setCookie = (name: string, value: string, expiryDays?: number, expiryHours
 };
 
 const GlobalBanner: React.FC<GlobalBannerProps> = ({
+  locale,
   title,
   titleHref,
   description,
@@ -67,8 +69,9 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
         icon="close"
         iconOnly
         onClick={handleDismiss}
-        aria-label="Dismiss banner"
-      />
+      >
+        {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
+      </SecondaryButton>
     </div>
   );
 };

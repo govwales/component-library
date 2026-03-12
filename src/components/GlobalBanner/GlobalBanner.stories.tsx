@@ -9,7 +9,7 @@ const clearCookie = (name: string) => {
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 const meta: Meta<typeof GlobalBanner> = {
-  title: 'Components/GlobalBanner',
+  title: 'Components/Global Banner',
   component: GlobalBanner,
   parameters: {
     layout: 'fullscreen',
@@ -26,12 +26,17 @@ export default meta;
 type Story = StoryObj<typeof GlobalBanner>;
 
 export const Default: Story = {
-  args: {
-    title: 'Important Notice',
-    titleHref: '#',
-    description: 'This is an important announcement. Please read carefully.',
-    cookieConfig: { name: 'globalBanner', expiryDays: 7 },
-    type: 'default',
+  render: (_args: any, { globals: { locale } }) => {
+    return (
+      <GlobalBanner
+        locale={locale}
+        title="Important Notice"
+        titleHref="#"
+        description="This is an important announcement. Please read carefully."
+        cookieConfig={{ name: 'globalBanner', expiryDays: 7 }}
+        type="default"
+      />
+    );
   },
   beforeEach: async () => {
     clearCookie('globalBanner');
@@ -46,12 +51,17 @@ export const Default: Story = {
 };
 
 export const Feedback: Story = {
-  args: {
-    title: 'Feedback Requested',
-    titleHref: '#',
-    description: 'We would love to hear your thoughts on our new features.',
-    cookieConfig: { name: 'globalBannerFeedback', expiryDays: 7 },
-    type: 'feedback',
+  render: (_args: any, { globals: { locale } }) => {
+    return (
+      <GlobalBanner
+        locale={locale}
+        title="Important Notice"
+        titleHref="#"
+        description="This is an important announcement. Please read carefully."
+        cookieConfig={{ name: 'globalBanner', expiryDays: 7 }}
+        type="feedback"
+      />
+    );
   },
   beforeEach: async () => {
     clearCookie('globalBannerFeedback');
@@ -66,12 +76,17 @@ export const Feedback: Story = {
 };
 
 export const DismissFunctionality: Story = {
-  args: {
-    title: 'Important Notice',
-    titleHref: '#',
-    description: 'This is an important announcement. Click dismiss to test cookie functionality.',
-    cookieConfig: { name: 'globalBannerDismiss', expiryDays: 7 },
-    type: 'default',
+  render: (_args: any, { globals: { locale } }) => {
+    return (
+      <GlobalBanner
+        locale={locale}
+        title="Important Notice"
+        titleHref="#"
+        description="This is an important announcement. Click dismiss to test cookie functionality."
+        cookieConfig={{ name: 'globalBannerDismiss', expiryDays: 7 }}
+        type="default"
+      />
+    );
   },
   beforeEach: async () => {
     clearCookie('globalBannerDismiss');
