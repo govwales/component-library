@@ -1,26 +1,40 @@
+// LLYW.CYMRU | GOV.WALES
+// Components: Global banner
+// ========================================
+
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins/typography' as *;
+
 .gw-global-banner {
+  padding: 20px 0;
+  background-color: #f0f0f0;
 
-  &__content {
-
+  .gw-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
   }
 
-  &__title {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
+  &__title,
+  &__description {
+    @include gw-mixin-font-size($gw-font-size-label, $gw-line-height);
   }
 
   &__description {
-
-  }
-
-  &--default {
-    background-color: #f0f0f0;
-    color: #333;
-    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
   }
 
   &--feedback {
-    background-color: #e7f3ff;
-    color: #0056b3;
-    border-bottom: 1px solid #b3d9ff;
+    background-color: $gw-colour-yellow-2;
+  }
+  .gw-btn {
+    min-width: 34px;
   }
 }

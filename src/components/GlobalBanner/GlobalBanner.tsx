@@ -58,20 +58,22 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
 
   return (
     <div className={`gw-global-banner gw-global-banner--${type}`} role="banner">
-      <div className="gw-global-banner__content">
-        <a href={titleHref} className="gw-global-banner__title">
-          {title}
-        </a>
-        <p className="global-banner__description">{description}</p>
+      <div className='gw-container'>
+        <div className="gw-global-banner__content">
+          <a href={titleHref} className="gw-global-banner__title">
+            {title}
+          </a>
+          <p className="gw-global-banner__description">{description}</p>
+        </div>
+        <SecondaryButton
+          as="button"
+          icon="close"
+          iconOnly
+          onClick={handleDismiss}
+        >
+          {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
+        </SecondaryButton>
       </div>
-      <SecondaryButton
-        as="button"
-        icon="close"
-        iconOnly
-        onClick={handleDismiss}
-      >
-        {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
-      </SecondaryButton>
     </div>
   );
 };
