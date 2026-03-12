@@ -14,12 +14,6 @@ const meta: Meta<typeof GlobalBanner> = {
   parameters: {
     layout: 'fullscreen',
   },
-  argTypes: {
-    type: {
-      control: { type: 'select' },
-      options: ['default', 'feedback'],
-    },
-  },
 };
 
 export default meta;
