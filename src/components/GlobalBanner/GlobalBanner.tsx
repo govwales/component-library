@@ -58,9 +58,11 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
     <div className={`gw-global-banner`} role="banner">
       <div className='gw-container'>
         <div className="gw-global-banner__content">
-          <a href={titleHref} className="gw-global-banner__title">
-            {title}
-          </a>
+          <p className="gw-global-banner__title">
+            <a href={titleHref}>
+              {title}
+            </a>
+          </p>
           <p className="gw-global-banner__description">{description}</p>
         </div>
         <SecondaryButton
