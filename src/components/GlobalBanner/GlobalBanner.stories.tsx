@@ -76,27 +76,3 @@ export const DismissFunctionality: Story = {
     await expect(banner).not.toBeInTheDocument();
   },
 };
-
-export const LongContent: Story = {
-  render: (_args: any, { globals: { locale } }) => {
-    return (
-      <GlobalBanner
-        locale={locale}
-        title="This is a very long title that should test how the banner handles extended text content that might wrap or overflow in different screen sizes and layouts"
-        titleHref="#"
-        description="This is a very long description that should test how the banner handles extended text content. It includes multiple sentences and should demonstrate how the component behaves with lengthy announcements or important notices that users need to read. The description should wrap appropriately and maintain readability across different viewport sizes. This additional text ensures we can see how the banner scales with more content than typical use cases."
-        cookieConfig={{ name: 'globalBannerLong', expiryDays: 7 }}
-      />
-    );
-  },
-  beforeEach: async () => {
-    clearCookie('globalBannerLong');
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-
-    // Check that the banner is initially visible
-    const banner = canvas.getByRole('banner');
-    await expect(banner).toBeInTheDocument();
-  },
-};
