@@ -24,7 +24,7 @@
   }
 
   &__title {
-    @include gw-mixin-font-size($gw-font-size-label, $gw-line-height);
+    @include gw-mixin-font-size($gw-font-size-h4, $gw-line-height);
     margin-bottom: 5px;
   }
 
