@@ -1,0 +1,91 @@
+import React, { useState, useEffect } from 'react';
+import { SecondaryButton } from '../Button';
+import './GlobalBanner.scss';
+
+interface CookieConfig {
+  name: string;
+  expiryDays?: number;
+  expiryHours?: number;
+}
+
+interface GlobalBannerProps {
+  locale?: 'en' | 'cy';
+  title: string;
+  titleHref: string;
+  description: string;
+  cookieConfig: CookieConfig;
+}
+
+const getCookie = (name: string): string | null => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
+  return null;
+};
+
+const setCookie = (name: string, value: string, expiryDays?: number, expiryHours?: number) => {
+  const date = new Date();
+  const timeInMs = (expiryDays || 0) * 24 * 60 * 60 * 1000 + (expiryHours || 0) * 60 * 60 * 1000;
+  date.setTime(date.getTime() + timeInMs);
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${value}; ${expires}; path=/`;
+};
+
+const GlobalBanner: React.FC<GlobalBannerProps> = ({
+  locale,
+  title,
+  titleHref,
+  description,
+  cookieConfig,
+}) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [jsEnabled, setJsEnabled] = useState(false);
+  const [cookiesEnabled, setCookiesEnabled] = useState(false);
+
+  useEffect(() => {
+    // If JS is enabled, the component is mounted and we can show the dismiss button if cookies are supported.
+    setJsEnabled(true);
+    // Set whether cookies are enabled in the user's browser
+    setCookiesEnabled(navigator.cookieEnabled);
+
+    const cookie = getCookie(cookieConfig.name);
+    if (cookie) {
+      setIsVisible(false);
+    }
+  }, [cookieConfig.name]);
+
+  const handleDismiss = () => {
+    if (!cookiesEnabled) return;
+    setCookie(cookieConfig.name, 'dismissed', cookieConfig.expiryDays, cookieConfig.expiryHours);
+    setIsVisible(false);
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className={`gw-global-banner`} role="banner">
+      <div className='gw-container'>
+        <div className="gw-global-banner__content">
+          <p className="gw-global-banner__title">
+            <a href={titleHref}>
+              {title}
+            </a>
+          </p>
+          <p className="gw-global-banner__description">{description}</p>
+        </div>
+        {jsEnabled && cookiesEnabled && (
+          <SecondaryButton
+            as="button"
+            icon="close"
+            iconOnly
+            onClick={handleDismiss}
+          >
+            {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
+          </SecondaryButton>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default GlobalBanner;
