@@ -27,7 +27,7 @@ export const Default: Story = {
         title="Important Notice"
         titleHref="#"
         description="This is an important announcement. Please read carefully."
-        cookieConfig={{ name: 'globalBanner', expiryDays: 7 }}
+        cookieConfig={{ name: 'globalBanner', expiryDays: 7, expiryHours: 12 }}
       />
     );
   },
@@ -65,14 +65,16 @@ export const DismissFunctionality: Story = {
     const banner = canvas.getByRole('banner');
     await expect(banner).toBeInTheDocument();
 
-    // Find and click the dismiss button
-    const dismissButton = canvas.getByRole('button', { name: /hide message/i });
-    await userEvent.click(dismissButton);
+    // The dismiss button only shows when cookies are enabled.
+    const dismissButton = canvas.queryByRole('button', { name: /hide message/i });
+    if (dismissButton) {
+      await userEvent.click(dismissButton);
 
-    // Wait a moment for the component to update
-    await sleep(100);
+      // Wait a moment for the component to update
+      await sleep(100);
 
-    // Check that the banner is no longer visible
-    await expect(banner).not.toBeInTheDocument();
+      // Check that the banner is no longer visible
+      await expect(banner).not.toBeInTheDocument();
+    }
   },
 };

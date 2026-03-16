@@ -39,8 +39,15 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
   cookieConfig,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [jsEnabled, setJsEnabled] = useState(false);
+  const [cookiesEnabled, setCookiesEnabled] = useState(false);
 
   useEffect(() => {
+    // If JS is enabled, the component is mounted and we can show the dismiss button if cookies are supported.
+    setJsEnabled(true);
+    // Set whether cookies are enabled in the user's browser
+    setCookiesEnabled(navigator.cookieEnabled);
+
     const cookie = getCookie(cookieConfig.name);
     if (cookie) {
       setIsVisible(false);
@@ -48,6 +55,7 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
   }, [cookieConfig.name]);
 
   const handleDismiss = () => {
+    if (!cookiesEnabled) return;
     setCookie(cookieConfig.name, 'dismissed', cookieConfig.expiryDays, cookieConfig.expiryHours);
     setIsVisible(false);
   };
@@ -65,14 +73,16 @@ const GlobalBanner: React.FC<GlobalBannerProps> = ({
           </p>
           <p className="gw-global-banner__description">{description}</p>
         </div>
-        <SecondaryButton
-          as="button"
-          icon="close"
-          iconOnly
-          onClick={handleDismiss}
-        >
-          {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
-        </SecondaryButton>
+        {jsEnabled && cookiesEnabled && (
+          <SecondaryButton
+            as="button"
+            icon="close"
+            iconOnly
+            onClick={handleDismiss}
+          >
+            {locale === 'cy' ? "Cuddio neges" : 'Hide message'}
+          </SecondaryButton>
+        )}
       </div>
     </div>
   );
