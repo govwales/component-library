@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { SecondaryButton } from '../Button';
 import './GlobalBanner.scss';
 
@@ -31,13 +31,13 @@ const setCookie = (name: string, value: string, expiryDays?: number, expiryHours
   document.cookie = `${name}=${value}; ${expires}; path=/`;
 };
 
-const GlobalBanner: React.FC<GlobalBannerProps> = ({
+const GlobalBanner = ({
   locale,
   title,
   titleHref,
   description,
   cookieConfig,
-}) => {
+}: GlobalBannerProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [jsEnabled, setJsEnabled] = useState(false);
   const [cookiesEnabled, setCookiesEnabled] = useState(false);
