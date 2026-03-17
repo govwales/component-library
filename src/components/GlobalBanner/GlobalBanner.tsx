@@ -56,7 +56,7 @@ const GlobalBanner = ({
 
   const handleDismiss = () => {
     if (!cookiesEnabled) return;
-    setCookie(cookieConfig.name, 'dismissed', cookieConfig.expiryDays, cookieConfig.expiryHours);
+    setCookie(cookieConfig.name, 'true', cookieConfig.expiryDays, cookieConfig.expiryHours);
     setIsVisible(false);
   };
 
