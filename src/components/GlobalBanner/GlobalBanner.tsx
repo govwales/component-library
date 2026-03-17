@@ -9,7 +9,7 @@ interface CookieConfig {
 }
 
 interface GlobalBannerProps {
-  locale?: 'en' | 'cy';
+  locale?: 'en' | 'cy' | string;
   title: string;
   titleHref: string;
   description: string;
