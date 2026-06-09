@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SocialMediaLink } from '../Link';
 import './ShareThisPage.scss';
 
@@ -24,6 +24,7 @@ export interface ShareThisPageProps {
 
 const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
   const [expanded, setExpanded] = useState(false);
+  const [jsEnabled, setJsEnabled] = useState(false);
 
   const handleToggle = () => {
     setExpanded(current => !current);
@@ -35,17 +36,46 @@ const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
     headerLabel = "Rhannu'r dudalen hon";
   }
 
+  useEffect(() => {
+    setJsEnabled(true);
+  });
+
   return (
     <div id='gw-share-this-page' className='gw-share-this-page'>
-      <div className='gw-share-this-page__container'>
-        <details id='gw-share-this-page-link'>
-          <summary
-            onClick={handleToggle}
-            aria-controls='gw-share-this-page-link'
-            aria-expanded={expanded ? true : false}
+      {jsEnabled ? (
+        <>
+          <h2>
+            <button
+              id='sharePage'
+              aria-controls='sharePageLinks'
+              aria-expanded={expanded}
+              className='gw-share-this-page__toggle'
+              onClick={handleToggle}
+            >
+              {headerLabel}
+            </button>
+          </h2>
+          <ul
+            id='sharePageLinks'
+            aria-labelledby='sharePage'
+            className={expanded ? '' : 'gw-visually-hidden'}
           >
-            {headerLabel}
-          </summary>
+            {shareLinks.map((link, index) => (
+              <li key={index}>
+                <SocialMediaLink
+                  locale={locale}
+                  href={link.href}
+                  title={link.title}
+                  platform={link.method}
+                  size='sm'
+                />
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <>
+          <h2 className='gw-share-this-page__toggle'>{headerLabel}</h2>
           <ul>
             {shareLinks.map((link, index) => (
               <li key={index}>
@@ -59,8 +89,8 @@ const ShareThisPage = ({ locale, shareLinks }: ShareThisPageProps) => {
               </li>
             ))}
           </ul>
-        </details>
-      </div>
+        </>
+      )}
     </div>
   );
 };

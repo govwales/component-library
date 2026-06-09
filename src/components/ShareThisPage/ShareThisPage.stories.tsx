@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within, expect } from '@storybook/test';
+import { userEvent, within, expect } from 'storybook/test';
 
 // Import React component.
 import ShareThisPage from './ShareThisPage';
@@ -14,6 +14,11 @@ const meta: Meta = {
 
 export default meta;
 type Story = StoryObj;
+
+// Function to emulate pausing between interactions
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export const Default: Story = {
   render: (_args: any, { globals: { locale } }) => {
@@ -70,6 +75,7 @@ export const Expanded: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
+    await sleep(100);
     const shareThisButton = canvas.getByText('Share this page');
     await expect(shareThisButton).toHaveAttribute('aria-expanded', 'false');
     await userEvent.click(shareThisButton);

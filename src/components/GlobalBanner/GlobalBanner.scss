@@ -1,0 +1,35 @@
+// LLYW.CYMRU | GOV.WALES
+// Components: Global banner
+// ========================================
+
+@use '../../scss/variables/variables' as *;
+@use '../../scss/helpers/mixins/typography' as *;
+
+.gw-global-banner {
+  padding: 20px 0;
+  background-color: $gw-colour-yellow-2; // TODO: Align colours with Figma design when done.
+
+  .gw-container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include gw-mixin-font-size($gw-font-size-h4, $gw-line-height);
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    @include gw-mixin-font-size($gw-font-size-description, $gw-line-height);
+    margin-bottom: 0;
+  }
+}

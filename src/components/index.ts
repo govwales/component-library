@@ -5,6 +5,7 @@ export * from './CallOut';
 export * from './Card';
 export * from './CookieBanner';
 export * from './ErrorMessage';
+export * from './GlobalBanner';
 export * from './Layout';
 export * from './Link';
 export * from './Metadata';

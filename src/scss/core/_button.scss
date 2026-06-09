@@ -125,14 +125,14 @@ $button-colours: (
   // Class: 'gw-btn--icon-only'.
   &--icon-only {
     text-indent: -9999px;
-    width: 34px;
-    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
     padding: 0;
     background-position: center;
 
     &.gw-btn--lg {
-      width: 44px;
-      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
     }
   }
 

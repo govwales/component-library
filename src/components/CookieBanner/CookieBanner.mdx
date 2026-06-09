@@ -1,4 +1,5 @@
 import {
+  Story,
   Canvas,
   Meta,
   Title,
@@ -7,7 +8,7 @@ import {
   Primary,
   Controls,
   Stories,
-} from '@storybook/blocks';
+} from '@storybook/addon-docs/blocks';
 
 import * as CookieBannerStories from './CookieBanner.stories';
 
@@ -22,4 +23,7 @@ A notice to help users to understand what cookies do.
 
 ### Cookies accepted message
 
-<Canvas of={CookieBannerStories.CookiesAccepted} />
+<Story
+  of={CookieBannerStories.CookiesAccepted}
+  autoplay
+/>

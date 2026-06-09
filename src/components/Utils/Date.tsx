@@ -1,5 +1,5 @@
-import '@formatjs/intl-datetimeformat/polyfill-force';
-import '@formatjs/intl-getcanonicallocales/polyfill';
+import '@formatjs/intl-getcanonicallocales';
+import '@formatjs/intl-datetimeformat';
 import '@formatjs/intl-datetimeformat/locale-data/en';
 import '@formatjs/intl-datetimeformat/locale-data/cy';
 
