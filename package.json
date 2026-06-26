@@ -1,6 +1,6 @@
 {
   "name": "@govwales/component-library",
-  "version": "1.0.18",
+  "version": "1.0.20",
   "description": "GOV.WALES Design System Component Library for government digital services and platforms",
   "author": {
     "name": "Welsh Government Corporate Digital Team"
@@ -46,7 +46,7 @@
     "@formatjs/intl-datetimeformat": "^7.4.9",
     "@formatjs/intl-getcanonicallocales": "^3.2.10",
     "classnames": "^2.5.1",
-    "dompurify": "^3.4.10",
+    "dompurify": "^3.4.11",
     "js-cookie": "^3.0.8"
   },
   "devDependencies": {
@@ -74,7 +74,7 @@
     "sass-embedded": "^1.100.0",
     "storybook": "^10.4.5",
     "typescript": "^5.9.3",
-    "vite": "^7.3.5",
+    "vite": "^8.0.16",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.16"
   },
